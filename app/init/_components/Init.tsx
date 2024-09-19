@@ -17,7 +17,7 @@ return (
       className='relative rounded-full bg-red-600 flex items-center justify-center w-[100%] h-[100%] animate-growWidth'
       >
         <div
-        className='absolute w-[100%] h-[100%] rounded-full bg-black'
+        className='absolute w-[100%] h-[100%] rounded-full bg-black bg-gradient-to-r from-black to-gray-300'
         />
         <div style={{
             color:'white',
