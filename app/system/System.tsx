@@ -18,6 +18,9 @@ import SearchInput from './_components/SearchInput'
 import { useRouter } from 'next/navigation'
 import { setInterval } from 'timers'
 import ImageZoom from './_components/ImageZoom'
+import TabComponent from './_components/TabComponent'
+import ToggleButtonTab from './_components/ToggleButtonTab'
+import DynamicChart from './_components/chart/DynamicChart'
 
 export default function System() {
   const [isOpen,setisOpen] = useState<boolean>(false);
@@ -43,7 +46,7 @@ const trafficData = {
   datasets: [
     {
       label: 'Traffic Sources',
-      data: [40, 30, 15, 10, 5], // 트래픽 소스의 비율
+      data: [80, 30, 15, 10, 5], // 트래픽 소스의 비율
       backgroundColor: [
         'rgba(75, 192, 192, 0.2)',
         'rgba(255, 99, 132, 0.2)',
@@ -59,6 +62,17 @@ const trafficData = {
         'rgba(153, 102, 255, 1)',
       ],
       borderWidth: 3,
+      options : {
+        scales: {
+          x: {
+            type: 'category', // 카테고리 스케일
+          },
+          y: {
+            type: 'linear', // linear 스케일
+            beginAtZero: true,
+          },
+        },
+      }
     },
   ]
 };
@@ -69,10 +83,30 @@ const jsonData = [
   { id: 3, name: 'Sam Johnson', age: 22, email: 'sam@example.com' },
 ];
 
+const tabs = [
+  { label: 'Home', content: 'This is the Home tab' },
+  { label: 'Profile', content: 'This is the Profile tab' },
+  { label: 'Settings', content: 'This is the Settings tab' },
+];
+
+const options = {
+  scales: {
+    x: {
+      type: 'category',
+    },
+    y: {
+      type: 'linear',
+      beginAtZero: true,
+    },
+  },
+};
+
+
   return (
     <Container
         className='flex-wrap gap-10 w-[1800px]'
     >
+        <ToggleButtonTab />
         <Button 
         label='Toast Test'
         variant='primary'
@@ -87,6 +121,11 @@ const jsonData = [
         label='BUTTON'
         variant='danger'
         onClick={()=>{}}
+        />
+        <Button 
+        label='init'
+        variant='secondary'
+        onClick={()=>{router.push('/init')}}
         />
         <Loader />
         <Toast 
@@ -106,6 +145,11 @@ const jsonData = [
         />
         <DoughnutChart 
         data={trafficData}
+        />
+        <DynamicChart
+        chartType='bar'
+        data={trafficData}
+        options={options}
         />
         <ToggleSwitch 
         initialState={true}
@@ -139,6 +183,15 @@ const jsonData = [
           imgSrc={slidesData[0].src}
           resultWidth={300}
           resultHeight={300}
+        />
+        <TabComponent
+          tabs={tabs}
+        />
+        <DynamicChart
+        chartType='radar'
+        data={trafficData}
+        options={options}
+        className='w-[500px] h-[500px]'
         />
     </Container>
   )

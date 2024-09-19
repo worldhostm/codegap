@@ -1,3 +1,4 @@
+import { color } from "chart.js/helpers";
 import type { Config } from "tailwindcss";
 
 const config: Config = {
@@ -11,6 +12,9 @@ const config: Config = {
       colors: {
         background: "var(--background)",
         foreground: "var(--foreground)",
+        backgroundImage: {
+          'conic-gradient': 'conic-gradient(red, transparent)',
+        },
       },
       keyframes: {
         wiggle: {
@@ -21,10 +25,41 @@ const config: Config = {
           '0%': { opacity: '0' },
           '100%': { opacity: '1' },
         },
+        growWidth :{
+          '0%' : {
+            width: '0%',
+            height: '0%',
+            borderWidth: '0',
+            borderColor: 'black',
+          },
+          '100%':{
+            width: '90%',
+            height: '90%',
+            borderWidth: '8px',
+            borderColor: 'red',
+          }
+        },
+        drawBorder: {
+          '0%': {
+            background: 'conic-gradient(red 0deg, transparent 0deg)',
+          },
+          '100%': {
+            background: 'conic-gradient(red 360deg, transparent 0deg)',
+          },
+        },
+        Zindex:{
+          '0%':{
+          }
+          ,'100%':{
+            
+          }
+        }
       },
       animation: {
         wiggle: 'wiggle 1s ease-in-out infinite',
-        fadeIn: 'fadeIn 1s ease-in-out',
+        fadeIn: 'fadeIn 2.5s ease-in-out',
+        growWidth:'growWidth 2s ease-in-out forwards',
+        drawBorder:'drawBorder 5s forwards',
       },
     },
   },
