@@ -23,7 +23,7 @@ return (
             color:'white',
             zIndex:1
         }}
-        className='animate-fadeIn text-8xl nowrap w-full'
+        className='animate-fadeIn text-8xl whitespace-nowrap w-full font-extrabold'
         >
             CODE GAP
         </div>

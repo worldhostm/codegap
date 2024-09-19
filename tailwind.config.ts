@@ -22,8 +22,8 @@ const config: Config = {
           '50%': { transform: 'rotate(3deg)' },
         },
         fadeIn: {
-          '0%': { opacity: '0' },
-          '100%': { opacity: '1' },
+          '0%': { opacity: '0', width:'100%'},
+          '100%': { opacity: '1', width:'100%' },
         },
         growWidth :{
           '0%' : {
