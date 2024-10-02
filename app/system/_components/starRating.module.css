@@ -1,0 +1,17 @@
+.checked {
+    color: orange;
+  }
+  
+  .halfChecked {
+    position: relative;
+  }
+  
+  .halfChecked:before {
+    content: '\f089';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 50%;
+    overflow: hidden;
+    color: orange;
+  }

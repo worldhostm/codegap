@@ -1,0 +1,18 @@
+/* ProgressTile 컴포넌트에서 커서 숨기기 */
+.custom-cursor-container {
+    /* cursor: none; */
+  }
+  
+  .custom-cursor {
+    width: 20px;
+    height: 20px;
+    /* border: 2px solid black; */
+    background-color: black;
+    border-radius: 50%;
+    position: absolute;
+    pointer-events: none;
+    transform: translate(-50%, -50%);
+    z-index: 1000;
+    transition: transform 0.1s ease-out;
+  }
+  

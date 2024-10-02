@@ -1,3 +1,5 @@
+'use client'
+
 import React, { useState, useEffect } from 'react';
 
 interface ProgressBarProps {
@@ -32,9 +34,9 @@ const ProgressBar: React.FC<ProgressBarProps> = ({ value, max, duration = 1000 }
   const percentage = Math.min((progress / max) * 100, 100);
 
   return (
-    <div className="w-full bg-gray-200 rounded-full h-8">
+    <div className="w-full h-3 bg-gray-200 rounded-full">
       <div
-        className="bg-blue-500 h-8 rounded-full transition-all duration-500 ease-in-out"
+        className={`bg-blue-500 h-3 rounded-l-[9999px] ${percentage > 94 && 'rounded-full'} transition-all duration-500 ease-in-out`}
         style={{ width: `${percentage}%` }}
       >
       </div>

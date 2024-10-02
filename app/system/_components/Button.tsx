@@ -30,7 +30,7 @@ export default function Button({
       type={type}
       onClick={onClick}
       disabled={disabled}
-      className={`${baseClass} ${variantClass[variant]} ${className} ${disabled ? 'opacity-50 cursor-not-allowed' : ''}`}
+      className={`${baseClass} ${className} ${variantClass[variant]} ${disabled ? 'opacity-50 cursor-not-allowed' : ''}`}
     >
       {label}
     </button>

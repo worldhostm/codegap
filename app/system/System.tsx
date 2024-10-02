@@ -21,6 +21,7 @@ import ImageZoom from './_components/ImageZoom'
 import TabComponent from './_components/TabComponent'
 import ToggleButtonTab from './_components/ToggleButtonTab'
 import DynamicChart from './_components/chart/DynamicChart'
+import StarRating from './_components/StarRating'
 
 export default function System() {
   const [isOpen,setisOpen] = useState<boolean>(false);
@@ -106,7 +107,8 @@ const options = {
     <Container
         className='flex-wrap gap-10 w-[1800px]'
     >
-        <ToggleButtonTab />
+        <StarRating stars={2.5}/>
+        {/* <ToggleButtonTab /> */}
         <Button 
         label='Toast Test'
         variant='primary'
