@@ -33,8 +33,8 @@ const config: Config = {
             borderColor: 'black',
           },
           '100%':{
-            width: '90%',
-            height: '90%',
+            width: '150%',
+            height: '150%',
             borderWidth: '8px',
             borderColor: 'red',
           }

@@ -16,10 +16,10 @@ const router = useRouter();
 return (
     <div className='fixed w-full h-full flex items-center justify-center bg-black'>
       <div 
-      className='relative rounded-full bg-red-600 flex items-center justify-center w-[100%] h-[100%] animate-growWidth z-10'
+      className='absolute flex items-center justify-center w-[100%] h-[100%]'
       >
         <div
-        className='absolute w-[100%] h-[100%] rounded-full bg-black'
+        className='fixed border-red-600 w-[120vw] h-[120vh] rounded-full bg-black animate-growWidth'
         // bg-gradient-to-r from-black to-gray-300
         />
         <div style={{
