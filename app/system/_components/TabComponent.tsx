@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-interface Tab {
+export interface Tab {
   label: string;
   content: string;
 }
