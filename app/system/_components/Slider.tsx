@@ -52,7 +52,7 @@ const Slider = ({imgArr}:Slide) => {
   };
 
   return (
-    <div className="slideshow-container w-full h-[500px] relative max-w-4xl mx-auto object-cover">
+    <div className="relative slideshow-container w-full h-[500px] relative max-w-4xl mx-auto object-cover">
       {imgArr.map((slide, index) => (
         <div key={index} className="mySlides fade hidden">
           <div className="numbertext absolute top-0 left-0 p-2 text-white">{index + 1} / {imgArr.length}</div>
@@ -66,7 +66,7 @@ const Slider = ({imgArr}:Slide) => {
       <a className="next absolute top-1/2 right-0 px-4 py-2 text-white font-bold text-2xl cursor-pointer bg-opacity-50 bg-black hover:bg-opacity-70" onClick={() => plusSlides(1)}>&#10095;</a>
 
       {/* Dots */}
-      <div className="flex justify-center mt-4">
+      <div className="absolute flex justify-center mt-4 bottom-4 left-[45%]">
         {imgArr.map((_, index) => (
           <span
             key={index}

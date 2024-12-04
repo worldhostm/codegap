@@ -1,7 +1,14 @@
 'use client';
 
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import TabComponent from '@/app/system/_components/TabComponent'
+
+interface OrderSummaryProps {
+  totalPrice: number;
+  totalDiscount: number;
+  shippingCost: number;
+  itemCount: number;
+}
 
 export default function BasketComponents() {
     const basketTabArr = [
@@ -65,12 +72,34 @@ export default function BasketComponents() {
         })
     }
 
+    useEffect(()=>{
+        const asyncFun=async()=>{
+            try {
+                const res = await fetch('http://localhost:8080/users', {
+                    method:'GET',
+                    headers:{
+                        'Content-Type':'application/json'
+                    }
+                });
+                const resjson = await res.json();
+                console.info(resjson);
+
+            } catch (error) {
+                
+            }
+        }
+        asyncFun();
+    },[])
+
+    const [totalPrice,settotalPrice] = useState(99999999);
+    const [totalDiscount,settotalDiscount] = useState(0);
+    const [shippingCost,setshippingCost] = useState(0);
 
   return (
     <div>
       <TabComponent tabs={basketTabArr}/>
 
-      <div className="p-4 border rounded-md w-[100%]" >
+      <div className="flex flex-col p-4 border rounded-md w-[100%]" >
       <h2 className="text-lg font-bold mb-4">로켓배송 상품</h2>
       {products.map((product,idx) => (
         <div
@@ -134,6 +163,34 @@ export default function BasketComponents() {
           >삭제</button>
         </div>
       ))}
+    </div>
+
+    <div className="p-4 border rounded-md w-[100%]">
+      <h2 className="text-lg font-bold mb-4">주문 예상 금액</h2>
+      <div className="flex justify-between mb-2">
+        <span className="text-gray-500">총 상품 가격</span>
+        <span className="text-gray-900 font-medium">
+          {totalPrice.toLocaleString()}원
+        </span>
+      </div>
+      <div className="flex justify-between mb-2">
+        <span className="text-gray-500">총 할인</span>
+        <span className="text-red-500 font-medium">
+          -{totalDiscount.toLocaleString()}원
+        </span>
+      </div>
+      <div className="flex justify-between mb-4">
+        <span className="text-gray-500">총 배송비</span>
+        <span className="text-gray-900 font-medium">
+          +{shippingCost.toLocaleString()}원
+        </span>
+      </div>
+      <div className="flex justify-end items-center border-t pt-4 mt-4">
+        <span className="text-xl font-bold">₩ {totalPrice.toLocaleString()}원</span>
+      </div>
+      <button className="mt-6 w-full bg-blue-500 text-white py-2 rounded-md font-bold hover:bg-blue-600">
+        구매하기 ({products.length})
+      </button>
     </div>
     </div>
   )
