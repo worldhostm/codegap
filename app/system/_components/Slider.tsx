@@ -57,7 +57,8 @@ const Slider = ({imgArr}:Slide) => {
         <div key={index} className="mySlides fade hidden">
           <div className="numbertext absolute top-0 left-0 p-2 text-white">{index + 1} / {imgArr.length}</div>
           <img src={slide.src} alt={slide.caption} className="w-full object-cover" />
-          <div className="text absolute bottom-0 w-full text-center text-white p-4 bg-opacity-50 bg-black">{slide.caption}</div>
+          {/* 이미지 밑 설명 캡션 */}
+          {/* <div className="text absolute bottom-0 w-full text-center text-white p-4 bg-opacity-50 bg-black">{slide.caption}</div> */}
         </div>
       ))}
 

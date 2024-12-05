@@ -19,7 +19,7 @@ const DynamicChart: React.FC<ChartProps> = ({ chartType, data, options, classNam
   const renderChart = () => {
     switch (chartType) {
       case 'bar':
-        return <Bar data={data} options={options} />;
+        return <Bar data={data} options={data.options} />;
       case 'line':
         return <Line data={data} options={options} />;
       case 'doughnut':
