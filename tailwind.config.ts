@@ -37,6 +37,7 @@ const config: Config = {
             height: '150%',
             borderWidth: '8px',
             borderColor: 'red',
+            display:'none',
           }
         },
         drawBorder: {
