@@ -107,28 +107,6 @@ const options = {
     <Container
         className='flex-wrap gap-10 w-[1800px]'
     >
-        <StarRating stars={2.5}/>
-        {/* <ToggleButtonTab /> */}
-        <Button 
-        label='Toast Test'
-        variant='primary'
-        onClick={()=>{setisOpen(!isOpen)}}
-        />
-        <Button 
-        label='TODOLIST'
-        variant='secondary'
-        onClick={()=>{router.push('/todo')}}
-        />
-        <Button 
-        label='BUTTON'
-        variant='danger'
-        onClick={()=>{}}
-        />
-        <Button 
-        label='init'
-        variant='secondary'
-        onClick={()=>{router.push('/init')}}
-        />
         <Loader />
         <Toast 
         message='테스트'
@@ -137,33 +115,86 @@ const options = {
             setisOpen(false);
         }}
         />
-        <AnimatedNumber
-        start={0}
-        end={1000}
-        duration={3000}
-        />
-        <Slider 
-        imgArr={slidesData}
-        />
-        <DoughnutChart 
-        data={trafficData}
-        />
-        <DynamicChart
-        chartType='bar'
-        data={trafficData}
-        options={options}
-        />
-        <ToggleSwitch 
-        initialState={true}
-        />
+        <StarRating stars={2.5}/>
+        {/* <ToggleButtonTab /> */}
+        <div style={{
+          display:'flex',
+          gap:'20px'
+        }}>
+          <Button 
+          label='Toast Test'
+          variant='primary'
+          onClick={()=>{setisOpen(!isOpen)}}
+          />
+          <Button 
+          label='TODOLIST'
+          variant='secondary'
+          onClick={()=>{router.push('/todo')}}
+          />
+          <Button 
+          label='BUTTON'
+          variant='danger'
+          onClick={()=>{}}
+          />
+          <Button 
+          label='init'
+          variant='secondary'
+          onClick={()=>{router.push('/init')}}
+          />
+          <TabComponent
+            tabs={tabs}
+          />
+        </div>
+        <div style={{
+          display:'flex',
+          gap:'20px'
+        }}>
+          <DynamicChart
+            chartType='bar'
+            data={trafficData}
+            options={options}
+          />
+          <DynamicChart
+            chartType='line'
+            data={trafficData}
+            options={options}
+          />
+          <DynamicChart
+            chartType='bubble'
+            data={trafficData}
+            options={options}
+          />
+          <DynamicChart
+            chartType='radar'
+            data={trafficData}
+            options={options}
+          />
+        </div>
+        <div style={{
+          display:'flex',
+          gap:'20px'
+        }}>
+          <Slider 
+          imgArr={slidesData}
+          />
+          <ImageZoom 
+            imgSrc={slidesData[0].src}
+            resultWidth={300}
+            resultHeight={300}
+          />
+        </div>
         <Card
         title='테스트'
         description='설명'
         imageUrl='/sample/sample_images_00.png'
         />
-        <ProgressBar
-        value={80}
-        max={100}
+        <AnimatedNumber
+        start={0}
+        end={1000}
+        duration={3000}
+        />
+        <ToggleSwitch 
+        initialState={true}
         />
         <Button
         label='ConfirmModal'
@@ -181,19 +212,9 @@ const options = {
         <SearchInput
         onSearch={()=>{}}
         />
-        <ImageZoom 
-          imgSrc={slidesData[0].src}
-          resultWidth={300}
-          resultHeight={300}
-        />
-        <TabComponent
-          tabs={tabs}
-        />
-        <DynamicChart
-        chartType='radar'
-        data={trafficData}
-        options={options}
-        className='w-[500px] h-[500px]'
+        <ProgressBar
+        value={80}
+        max={100}
         />
     </Container>
   )
