@@ -13,7 +13,7 @@ export default function ToggleButtonTab({options, isActive, setisActive, classNa
 
     return (
         <div 
-            className={`relative w-[300px] h-[100px] ${!isActive ? `bg-blue-200` : `bg-gray-200`} transition-all rounded-full flex items-center px-1 cursor-pointer ${className}`}
+            className={`relative w-[300px] h-[100px] ${!isActive ? `bg-red-200` : `bg-gray-200`} transition-all rounded-full flex items-center px-1 cursor-pointer ${className}`}
             onClick={() => setisActive(!isActive)}
         >
             <div 
