@@ -14,7 +14,7 @@ interface ChartProps {
   id?:string;
 }
 
-const DynamicChart: React.FC<ChartProps> = ({ chartType, data, options, className, id }) => {
+const DynamicChart: React.FC<ChartProps> = ({ chartType, data, className, id }) => {
     // Chart.js 데이터와 옵션 설정
     // const data = data;
   // 차트 타입에 따라 다른 차트를 렌더링

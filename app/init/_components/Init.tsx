@@ -30,7 +30,7 @@ return (
         // bg-gradient-to-r from-black to-gray-300
         />
         <div style={{
-            // color:'white',
+            color: isInit ? 'black':'white',
             zIndex:1,
             display:'flex',
             flexDirection:'column',
