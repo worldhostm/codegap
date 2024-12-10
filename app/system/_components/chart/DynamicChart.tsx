@@ -1,6 +1,6 @@
 import React from 'react';
 import { Chart, CategoryScale, LinearScale, BarElement, LineElement, ArcElement, PointElement,RadialLinearScale  } from 'chart.js';
-import { Bar, Line, Doughnut, Bubble ,Radar} from 'react-chartjs-2';
+import { Bar, Line, Doughnut, Bubble ,Radar, PolarArea} from 'react-chartjs-2';
 
 // 필요한 요소들 등록
 Chart.register(CategoryScale, LinearScale, BarElement, LineElement, ArcElement, PointElement,RadialLinearScale);
@@ -9,27 +9,31 @@ Chart.register(CategoryScale, LinearScale, BarElement, LineElement, ArcElement, 
 interface ChartProps {
   chartType: string;
   data: any;
-  options: any;
+  options?: any;
   className?:string;
+  id?:string;
 }
 
-const DynamicChart: React.FC<ChartProps> = ({ chartType, data, options, className }) => {
-  
+const DynamicChart: React.FC<ChartProps> = ({ chartType, data, options, className, id }) => {
+    // Chart.js 데이터와 옵션 설정
+    // const data = data;
   // 차트 타입에 따라 다른 차트를 렌더링
   const renderChart = () => {
     switch (chartType) {
       case 'bar':
-        return <Bar data={data} options={data.options} />;
+        return <Bar id={id} data={data} options={data.options} />;
       case 'line':
-        return <Line data={data} options={options} />;
+        return <Line id={id} data={data} options={data.options} />;
       case 'doughnut':
-        return <Doughnut data={data} options={options} />;
+        return <Doughnut id={id} data={data} options={data.options} />;
       case 'bubble':
-        return <Bubble data={data} options={options} />;
+        return <Bubble id={id} data={data} options={data.options} />;
       case 'radar':  // Radar 차트 추가
-        return <Radar data={data} options={options} />;
+        return <Radar id={id} data={data} options={data.options} />;
+      case 'polarArea':  // Radar 차트 추가
+        return <PolarArea id={id} data={data} options={data.options} />;
       default:
-        return <Bar data={data} options={options}  />; // 기본값은 Bar 차트
+        return <Bar id={id} data={data} options={data.options}  />; // 기본값은 Bar 차트
     }
   };
 

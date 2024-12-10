@@ -18,7 +18,7 @@ export default function Button({
   className = '',
 }: ButtonProps) {
   // 버튼 스타일에 따라 Tailwind 클래스를 동적으로 적용
-  const baseClass = 'px-4 py-2 rounded font-semibold focus:outline-none';
+  const baseClass = 'px-4 py-2 rounded font-semibold focus:outline-none whitespace-nowrap';
   const variantClass = {
     primary: 'bg-blue-500 text-white hover:bg-blue-600',
     secondary: 'bg-gray-500 text-white hover:bg-gray-600',

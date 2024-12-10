@@ -34,7 +34,7 @@ export default function ProgressTile({percentage, label, targetAmount, currentAm
     return (
     <div className={`w-[full] h-[full] relative ${styles[`custom-cursor-container`]}`}>
         <div
-        className='w-[300px] h-[180px] bg-white border border-gray-200 rounded-[8px] flex gap-3 items-center justify-center flex-col p-4'
+        className='w-[32vw] h-[15vh] bg-white border border-gray-200 rounded-[8px] flex gap-3 items-center justify-center flex-col p-4'
         >
             <div className='w-[100%] flex jusitify-start sm:text-base font-Pretendard font-semibold'>
                 <div className='flex gap-2'>

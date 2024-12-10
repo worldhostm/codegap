@@ -4,10 +4,10 @@ import Link from 'next/link'
 
 export default function Header() {
   return (
-    <header className='w-full bg-black text-white p-4'>
-      <nav className='flex justify-between items-center'>
+    <header className='w-full bg-black text-white p-8 flex'>
+      <nav className='w-full flex justify-between items-center'>
         <h1 className='text-2xl font-bold'>Header</h1>
-        <ul className='flex space-x-4'>
+        <ul className='flex space-x-4 items-center gap-30'>
           <li><Link href="/todo" className='hover:text-gray-300'>Todo</Link></li>
           <li><Link href="/system" className='hover:text-gray-300'>System</Link></li>
           <li><Link href="/init" className='hover:text-gray-300'>Init</Link></li>

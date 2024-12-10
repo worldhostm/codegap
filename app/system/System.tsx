@@ -78,6 +78,49 @@ const trafficData = {
   ]
 };
 
+const trafficData2 = {
+  labels: ['Organic Search', 'Direct', 'Referral', 'Social', 'Paid Search'],
+  datasets: [
+    {
+      label: 'Traffic Sources',
+      data: [
+        { x: 10, y: 80, r: 10 }, // Bubble 차트를 위한 x, y, r 값
+        { x: 20, y: 30, r: 15 },
+        { x: 30, y: 15, r: 20 },
+        { x: 40, y: 10, r: 25 },
+        { x: 50, y: 5, r: 30 },
+      ],
+      backgroundColor: [
+        'rgba(75, 192, 192, 0.2)',
+        'rgba(255, 99, 132, 0.2)',
+        'rgba(255, 205, 86, 0.2)',
+        'rgba(54, 162, 235, 0.2)',
+        'rgba(153, 102, 255, 0.2)',
+      ],
+      borderColor: [
+        'rgba(75, 192, 192, 1)',
+        'rgba(255, 99, 132, 1)',
+        'rgba(255, 205, 86, 1)',
+        'rgba(54, 162, 235, 1)',
+        'rgba(153, 102, 255, 1)',
+      ],
+      borderWidth: 3,
+    },
+  ],
+  options: {
+    scales: {
+      x: {
+        type: 'linear', // x축은 linear 스케일
+        position: 'bottom',
+      },
+      y: {
+        type: 'linear', // y축은 linear 스케일
+        beginAtZero: true,
+      },
+    },
+  },
+};
+
 const jsonData = [
   { id: 1, name: 'John Doe', age: 28, email: 'john@example.com' },
   { id: 2, name: 'Jane Smith', age: 34, email: 'jane@example.com' },
@@ -89,19 +132,6 @@ const tabs = [
   { label: 'Profile', content: 'This is the Profile tab' },
   { label: 'Settings', content: 'This is the Settings tab' },
 ];
-
-const options = {
-  scales: {
-    x: {
-      type: 'category',
-    },
-    y: {
-      type: 'linear',
-      beginAtZero: true,
-    },
-  },
-};
-
 
   return (
     <Container
@@ -150,24 +180,29 @@ const options = {
           gap:'20px'
         }}>
           <DynamicChart
+            chartType='doughnut'
+            data={trafficData}
+          />
+          <DynamicChart
             chartType='bar'
             data={trafficData}
-            options={options}
           />
           <DynamicChart
             chartType='line'
             data={trafficData}
-            options={options}
           />
           <DynamicChart
             chartType='bubble'
-            data={trafficData}
-            options={options}
+            data={trafficData2}
+            className='w-[800px] h-[400px]'
           />
           <DynamicChart
             chartType='radar'
             data={trafficData}
-            options={options}
+          />
+          <DynamicChart
+            chartType='polarArea'
+            data={trafficData}
           />
         </div>
         <div style={{
