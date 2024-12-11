@@ -3,13 +3,6 @@
 import React, { useEffect, useState } from 'react'
 import TabComponent from '@/app/system/_components/TabComponent'
 
-interface OrderSummaryProps {
-  totalPrice: number;
-  totalDiscount: number;
-  shippingCost: number;
-  itemCount: number;
-}
-
 export default function BasketComponents() {
     const basketTabArr = [
         {  label: '일반구매', content: '일반구매 콘텐츠'},
@@ -91,9 +84,9 @@ export default function BasketComponents() {
         asyncFun();
     },[])
 
-    const [totalPrice,settotalPrice] = useState(99999999);
-    const [totalDiscount,settotalDiscount] = useState(0);
-    const [shippingCost,setshippingCost] = useState(0);
+    const [totalPrice] = useState(99999999);
+    const [totalDiscount] = useState(0);
+    const [shippingCost] = useState(0);
 
   return (
     <div>
@@ -103,7 +96,7 @@ export default function BasketComponents() {
       <h2 className="text-lg font-bold mb-4">로켓배송 상품</h2>
       {products.map((product,idx) => (
         <div
-          key={product.id}
+          key={product.id + idx}
           className="flex items-center gap-4 p-4 border-b last:border-none w-[100%]"
         >
           {/* 체크박스 */}

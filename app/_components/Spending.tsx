@@ -1,12 +1,9 @@
-import React, { Fragment, KeyboardEvent, MouseEvent, useEffect, useState } from 'react'
+import React, { MouseEvent, useEffect, useState } from 'react'
 import Container from '../css/_components/FlexContainer'
 import LabeledInput from '../system/_components/LabeledInput';
-import Button from '../system/_components/Button';
-import Link from 'next/link';
 
 export default function Spending() {
     const [spendAmt,setspendAmt] = useState(0);
-    const [scheduleAmt,setscheduleAmt] = useState(0);
     const [amtlist, setamtlist] = useState<{title:string, price:string}[]>([{title:'냉장고',price:'1000'}]);
     const [title, settitle] = useState('');
     const [price, setprice] = useState('');
@@ -26,14 +23,14 @@ export default function Spending() {
 
     }
 
-    const handleSubmit=(param:{title:string,price:string})=>{
-        setamtlist((prev)=>{
-            let newValue =[];
-            if(prev) {newValue = [...prev,param];}
-            else  {newValue = prev;}
-            return newValue;
-        });
-    }
+    // const handleSubmit=(param:{title:string,price:string})=>{
+    //     setamtlist((prev)=>{
+    //         let newValue =[];
+    //         if(prev) {newValue = [...prev,param];}
+    //         else  {newValue = prev;}
+    //         return newValue;
+    //     });
+    // }
     const handleKeyPress=(e:React.KeyboardEvent<HTMLButtonElement | HTMLInputElement>)=>{
         if(e.key==='Enter'){
             e.preventDefault(); // 엔터를 눌렀을 때 페이지 새로고침 방지
@@ -49,14 +46,14 @@ export default function Spending() {
         }
     }
 
-    const handleSubmit2=(param:{title:string,price:string})=>{
-        setamtlist((prev)=>{
-            let newValue =[];
-            if(prev) {newValue = [param,...prev];}
-            else  {newValue = prev;}
-            return newValue;
-        });
-    }
+    // const handleSubmit2=(param:{title:string,price:string})=>{
+    //     setamtlist((prev)=>{
+    //         let newValue =[];
+    //         if(prev) {newValue = [param,...prev];}
+    //         else  {newValue = prev;}
+    //         return newValue;
+    //     });
+    // }
 
     const deleteComp = (e:MouseEvent ,idx: number) => {
         e.preventDefault();

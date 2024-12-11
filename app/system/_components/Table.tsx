@@ -1,7 +1,7 @@
 import React from 'react';
 
 interface TableProps {
-  data: Record<string, any>[]; // JSON 배열로 데이터를 받음
+  data: Record<string, string | number>[]; // JSON 배열로 데이터를 받음
 }
 
 const Table: React.FC<TableProps> = ({ data }) => {

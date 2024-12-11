@@ -1,7 +1,6 @@
 'use client'
 import React, { useEffect, useState } from 'react'
 import ProgressBar from '../system/_components/ProgressBar'
-import { describe } from 'node:test';
 import styles from './progressTile.module.css';
 
 interface Props{
