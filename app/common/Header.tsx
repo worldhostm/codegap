@@ -14,6 +14,7 @@ export default function Header() {
           <li><Link href="/portfolio" className='hover:text-gray-300'>PortFolio</Link></li>
           <li><Link href="/test" className='hover:text-gray-300'>테스트</Link></li>
           <li><Link href="/basket" className='hover:text-gray-300'>장바구니</Link></li>
+          <li><Link href="/news" className='hover:text-gray-300'>뉴스</Link></li>
         </ul>
       </nav>
     </header>

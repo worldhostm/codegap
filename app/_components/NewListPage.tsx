@@ -3,6 +3,7 @@ import fs from 'fs';
 import path from 'path';
 import Link from 'next/link';
 import { File } from 'buffer';
+import DynamicTable from './DynamicTable';
 
 type NewsItem = {
   id: number;
@@ -17,23 +18,15 @@ export default async function NewsListPage() {
   const fileData = fs.readFileSync(filePath, 'utf8');
   const news: NewsItem[] = JSON.parse(fileData);
 
+  const headers = ['id','title', 'createdAt'];
+// const data = [
+//   { Name: 'John Doe', Age: 28, City: 'New York' },
+//   { Name: 'Jane Smith', Age: 34, City: 'Los Angeles' },
+//   { Name: 'Sam Wilson', Age: 23, City: 'Chicago' },
+// ];
+
+
   return (
-    <div>
-      <h1>뉴스 목록</h1>
-      <ul>
-        {news.map((item) => (
-          <li key={item.id} style={{ marginBottom: '20px' }}>
-            <Link href={`/news/${item.id}`}>
-              <h2>{item.title}</h2>
-              <img
-                src={item.image}
-                alt={item.title}
-                style={{ width: '100px', height: '100px', objectFit: 'cover' }}
-              />
-            </Link>
-          </li>
-        ))}
-      </ul>
-    </div>
+        <DynamicTable headers={headers} data={news} />
   );
 }

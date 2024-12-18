@@ -1,33 +1,32 @@
 [
-    {
-      "id": 1,
-      "title": "첫 번째 뉴스",
-      "content": "첫 번째 뉴스의 상세 내용입니다.",
-      "image": "/images/news1.jpg"
-    },
-    {
-      "id": 2,
-      "title": "두 번째 뉴스",
-      "content": "두 번째 뉴스의 상세 내용입니다.",
-      "image": "/images/news2.jpg"
-    },
-    {
-      "id": 3,
-      "title": "두 번째 뉴스",
-      "content": "두 번째 뉴스의 상세 내용입니다.",
-      "image": "/images/news2.jpg"
-    },
-    {
-      "id": 4,
-      "title": "두 번째 뉴스",
-      "content": "두 번째 뉴스의 상세 내용입니다.",
-      "image": "/images/news2.jpg"
-    },
-    {
-      "id": 5,
-      "title": "두 번째 뉴스",
-      "content": "두 번째 뉴스의 상세 내용입니다.",
-      "image": "/images/news2.jpg"
-    }
-  ]
-  
+  {
+    "id": 1,
+    "title": "첫 번째 뉴스",
+    "content": "첫 번째 뉴스의 상세 내용입니다.",
+    "createdAt": "2024-12-12"
+  },
+  {
+    "id": 2,
+    "title": "두 번째 뉴스",
+    "content": "두 번째 뉴스의 상세 내용입니다.",
+    "createdAt": "2024-12-13"
+  },
+  {
+    "id": 3,
+    "title": "두 번째 뉴스",
+    "content": "두 번째 뉴스의 상세 내용입니다.",
+    "createdAt": "2024-12-14"
+  },
+  {
+    "id": 4,
+    "title": "두 번째 뉴스",
+    "content": "두 번째 뉴스의 상세 내용입니다.",
+    "createdAt": "2024-12-15"
+  },
+  {
+    "id": 5,
+    "title": "두 번째 뉴스",
+    "content": "두 번째 뉴스의 상세 내용입니다.",
+    "createdAt": "2024-12-16"
+  }
+]
