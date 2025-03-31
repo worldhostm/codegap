@@ -1,0 +1,18 @@
+/* styles.css 또는 글로벌 스타일 */
+.editor-wrapper {
+    border: 1px solid #ccc;
+    padding: 1rem;
+    border-radius: 8px;
+    max-width: 600px;
+    margin: 0 auto;
+  }
+  
+  .toolbar {
+    margin-bottom: 1rem;
+  }
+  
+  .toolbar button {
+    margin-right: 8px;
+    padding: 4px 10px;
+  }
+  
