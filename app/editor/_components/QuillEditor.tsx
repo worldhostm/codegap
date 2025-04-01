@@ -1,8 +1,8 @@
 'use client'
 
-import React, { useState } from 'react'
-import dynamic from 'next/dynamic'
-import 'react-quill/dist/quill.snow.css'
+import React, { Dispatch, SetStateAction, useState } from 'react'
+import dynamic from 'next/dynamic';
+import 'react-quill/dist/quill.snow.css';
 
 // Quill은 SSR이 안 되므로 dynamic import
 const ReactQuill = dynamic(() => import('react-quill'), { ssr: false })
@@ -10,10 +10,13 @@ const ReactQuill = dynamic(() => import('react-quill'), { ssr: false })
 interface QuillEditorProps {
   id: string
   initialValue?: string
+  // onChange:(e:any)=>void
+  onChange:()=>Dispatch<SetStateAction<string>>
+  valueText : string
 }
 
-export default function QuillEditor({ id, initialValue }: QuillEditorProps) {
-  const [value, setValue] = useState(initialValue || '')
+export default function QuillEditor({ id, initialValue, onChange,valueText}: QuillEditorProps) {
+  const [value, setValue] = useState(initialValue || '');
   const modules = {
     toolbar: [
       [{ header: [1, 2, 3, false] }],
