@@ -1,6 +1,7 @@
 'use client'
-import React, { useState } from 'react'
-import QuillEditor from './QuillEditor'
+import React, { useState } from 'react';
+import TiptapEditor from './Tiptap';
+
 
 export default function Editors() {
   const [title, setTitle] = useState('');
@@ -38,7 +39,8 @@ export default function Editors() {
 
   return (
     <div>
-      <input
+      <TiptapEditor id={"1"} />
+      {/* <input
         type="text"
         value={title}
         placeholder="제목을 입력하세요"
@@ -58,7 +60,7 @@ export default function Editors() {
         className="mt-4 px-4 py-2 bg-blue-500 text-white rounded"
       >
         저장
-      </button>
+      </button> */}
     </div>
   )
 }
