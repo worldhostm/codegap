@@ -7,7 +7,6 @@ import Highlight from '@tiptap/extension-highlight'
 import Italic from '@tiptap/extension-italic'
 import Link from '@tiptap/extension-link'
 
-import Dropcursor from '@tiptap/extension-dropcursor'
 import Image from '@tiptap/extension-image';
 import { useEditor, EditorContent } from '@tiptap/react'
 import Heading from '@tiptap/extension-heading';
@@ -23,10 +22,6 @@ import { useCallback, useEffect } from 'react';
 import {TextBox} from './tiptap/TextBox';
 import FileHandler from '@tiptap-pro/extension-file-handler';
 import TextAlign from '@tiptap/extension-text-align';
-import Strike from '@tiptap/extension-strike';
-import Subscript from '@tiptap/extension-subscript';
-import Superscript from '@tiptap/extension-superscript';
-import Underline from '@tiptap/extension-underline';
 // import Emoji, { gitHubEmojis } from '@tiptap-pro/extension-emoji'
 // import suggestion from './suggestion';
 
@@ -34,16 +29,12 @@ import Underline from '@tiptap/extension-underline';
 //   emojis: gitHubEmojis,
 // })
 
-interface TiptapEditorProps {
-  id: string
-  initialContent?: string
-}
 Table.configure({
   HTMLAttributes: {
     class: 'my-custom-class',
   },
 })
-export default function TiptapEditor({ id, initialContent }: TiptapEditorProps) {
+export default function TiptapEditor() {
   const editor = useEditor({
     extensions: [
       Document,
@@ -234,7 +225,7 @@ export default function TiptapEditor({ id, initialContent }: TiptapEditorProps) 
             onClick={() => editor.chain().focus().toggleHighlight({ color: 'red' }).run()}
             className={editor.isActive('highlight', { color: 'red' }) ? 'is-active' : ''}
           >
-            Red ('red')
+            Red (&apos;red&apos;)
           </button>
           <button
             onClick={() => editor.chain().focus().toggleHighlight({ color: '#ffa8a8' }).run()}

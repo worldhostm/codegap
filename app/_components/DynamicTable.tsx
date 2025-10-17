@@ -6,7 +6,7 @@ import Pagination from './Pagination';
 // Define the types for the props
 interface TableProps {
   headers: string[]; // Array of column headers
-  data: Array<{ [key: string]: any }>; // Array of row data objects
+  data: Array<{ [key: string]: string | number }>; // Array of row data objects
 }
 
 const keyLabels: { [key: string]: string } = {
@@ -16,7 +16,7 @@ const keyLabels: { [key: string]: string } = {
   };
 
 export default function DynamicTable ({ headers, data }:TableProps) {
-  const [currentPage, setCurrentPage] = React.useState(1);
+  const [, setCurrentPage] = React.useState(1);
     return (
         <div style={{ overflowX: 'auto', textAlign:'center',width:'100%', display:'flex', justifyContent:'center', flexDirection:'column', alignItems:'center'}}>
           <table

@@ -39,12 +39,11 @@ export default function VideoScroll(){
   }, [currentSection]);
 
 
-  const [prevIdx,setprevIdx] = useState<number>(0);
+  const [,setprevIdx] = useState<number>(0);
   // 스크롤 이벤트 처리
   const handleScroll = () => {
     if (!containerRef.current) return;
 
-    const sections = Array.from(containerRef.current.children) as HTMLElement[];
     const scrollTop = containerRef.current.scrollTop;
     const sectionIndex = Math.round(scrollTop / window.innerHeight);
 

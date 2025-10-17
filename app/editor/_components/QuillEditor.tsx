@@ -1,7 +1,6 @@
 'use client'
 
 import React, { Dispatch, SetStateAction, useRef, useState } from 'react'
-import dynamic from 'next/dynamic';
 import 'react-quill/dist/quill.snow.css';
 import ReactQuill from 'react-quill';
 import Quill from 'quill';
@@ -13,7 +12,7 @@ const Block = Quill.import('blots/block');
 Block.tagName = ['DIV', 'TABLE', 'TR', 'TD', 'TH'];
 
 class TextBoxBlot extends BlockEmbed {
-  static create(value: any) {
+  static create() {
     const node = super.create();
     node.setAttribute('class', 'quill-textbox');
     node.setAttribute('contenteditable', 'true');
@@ -40,7 +39,7 @@ interface QuillEditorProps {
   valueText : string
 }
 
-export default function QuillEditor({ id, initialValue, onChange,valueText}: QuillEditorProps) {
+export default function QuillEditor({ id, initialValue }: QuillEditorProps) {
   const [value, setValue] = useState(initialValue || '');
 
   const imageHandler = () => {
@@ -72,7 +71,7 @@ export default function QuillEditor({ id, initialValue, onChange,valueText}: Qui
         }
   
         // getSelection(true)는 강제로 포커스 줌
-        let range = editor.getSelection(true);
+        const range = editor.getSelection(true);
   
         // 안정성을 위해 100ms 지연 후 insertEmbed 실행
         if (!range || typeof range.index !== 'number') {

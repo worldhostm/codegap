@@ -6,7 +6,7 @@ export default function Header() {
   return (
     <header className='w-full bg-black text-white p-8 flex'>
       <nav className='w-full flex justify-between items-center'>
-        <h1 className='text-2xl font-bold'>Header</h1>
+        <h1 className='text-2xl font-bold'>wordlhostm</h1>
         <ul className='flex space-x-4 items-center gap-30'>
           <li><Link href="/todo" className='hover:text-gray-300'>Todo</Link></li>
           <li><Link href="/system" className='hover:text-gray-300'>System</Link></li>

@@ -6,10 +6,33 @@ import { Bar, Line, Doughnut, Bubble ,Radar, PolarArea} from 'react-chartjs-2';
 Chart.register(CategoryScale, LinearScale, BarElement, LineElement, ArcElement, PointElement,RadialLinearScale);
 
 // 차트 타입, 데이터, 옵션을 파라미터로 받아서 동적으로 차트를 렌더링하는 컴포넌트
+interface ChartData {
+  labels: string[];
+  datasets: Array<{
+    label: string;
+    data: number[] | Array<{ x: number; y: number; r: number }>;
+    backgroundColor?: string | string[];
+    borderColor?: string | string[];
+    borderWidth?: number;
+  }>;
+  options?: {
+    scales?: {
+      x?: {
+        type?: string;
+        position?: string;
+      };
+      y?: {
+        type?: string;
+        beginAtZero?: boolean;
+      };
+    };
+  };
+}
+
 interface ChartProps {
   chartType: string;
-  data: any;
-  options?: any;
+  data: ChartData;
+  options?: ChartData['options'];
   className?:string;
   id?:string;
 }

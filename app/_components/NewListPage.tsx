@@ -1,8 +1,5 @@
-import react from 'react';
 import fs from 'fs';
 import path from 'path';
-import Link from 'next/link';
-import { File } from 'buffer';
 import DynamicTable from './DynamicTable';
 
 type NewsItem = {
